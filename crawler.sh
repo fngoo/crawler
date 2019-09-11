@@ -19,7 +19,7 @@ split -l $each  $input -d -a 3 split_
 maybe=`ls|grep split|wc -l|grep -o -P ".*?(?=\ )"`
 if [ '$maybe' != '$x' ]
 then
-cat split_000 >> split_001 ; rm split_000
+cat split_000 >> split_004 ; rm split_000
 fi
 
 #移动文件至对应数字目录
