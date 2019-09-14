@@ -1,7 +1,5 @@
 #!/bin/bash
 
-rm `ls|grep -v -E 'crawler.py|httprobe.txt'` -r
-
 #创建目录
 x=4 ; input=httprobe.txt ; export x=4 ; export input=httprobe.txt
 for i in `seq 1 $x`
