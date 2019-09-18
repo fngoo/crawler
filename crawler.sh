@@ -8,7 +8,7 @@ if [ $length -lt $x ]
 then
 i=1
 mkdir dir_$i
-mv $input /root/script/3_httprobe/dir_${i}/${input}
+cp $input /root/script/3_httprobe/dir_${i}/${input}
 echo '#!/bin/bash' >> /root/script/3_httprobe/dir_${i}/${i}.sh
 echo 'x=$x ; input=httprobe.txt' >> /root/script/3_httprobe/dir_${i}/${i}.sh
 echo "touch dir_${i}/1.txt ; touch dir_${i}/2.txt ; touch dir_${i}/3.txt" >> /root/script/3_httprobe/dir_${i}/${i}.sh
