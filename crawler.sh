@@ -16,7 +16,8 @@ echo "for a in "\`cat /root/script/3_httprobe/dir_${i}/${input}\`"; do python /r
 bash /root/script/3_httprobe/dir_${i}/${i}.sh
 cd /root/script/3_httprobe
 rm -r /root/script/3_httprobe/dir_${i}
-
+#wayback
+for a in `cat $var`; do > 1.txt ; echo "$a" > 1.txt ; a=`cat 1.txt` ; cat 1.txt | waybackurls > 2.txt ; grep = 2.txt > 3.txt ; sed -e '/%/d' 3.txt | sed -e '/(/d' | sed -e '/)/d' | sed -e '/\/\:\/\//d' | sed -e '/\/\&/d' > 2.txt ; grep "\:\/\/$a" 2.txt > 3.txt ; rm 2.txt ; rm 1.txt ; cat 3.txt >> /root/script/3_httprobe/httprobe.txt ; rm 3.txt ; done
 
 
 else
@@ -68,5 +69,9 @@ do
 rm -r dir_$i
 done
 fi
+
+#wayback
+for a in `cat $var`; do > 1.txt ; echo "$a" > 1.txt ; a=`cat 1.txt` ; cat 1.txt | waybackurls > 2.txt ; grep = 2.txt > 3.txt ; sed -e '/%/d' 3.txt | sed -e '/(/d' | sed -e '/)/d' | sed -e '/\/\:\/\//d' | sed -e '/\/\&/d' > 2.txt ; grep "\:\/\/$a" 2.txt > 3.txt ; rm 2.txt ; rm 1.txt ; cat 3.txt >> /root/script/3_httprobe/httprobe.txt ; rm 3.txt ; done
+
 
 sort -u /root/script/3_httprobe/httprobe.txt -o /root/script/3_httprobe/httprobe.txt
