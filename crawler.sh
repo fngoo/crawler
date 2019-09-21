@@ -17,7 +17,7 @@ bash /root/script/3_httprobe/dir_${i}/${i}.sh
 cd /root/script/3_httprobe
 rm -r /root/script/3_httprobe/dir_${i}
 #wayback
-for a in `cat $var`; do > 1.txt ; echo "$a" > 1.txt ; a=`cat 1.txt` ; cat 1.txt | waybackurls > 2.txt ; grep = 2.txt > 3.txt ; sed -e '/%/d' 3.txt | sed -e '/(/d' | sed -e '/)/d' | sed -e '/\/\:\/\//d' | sed -e '/\/\&/d' > 2.txt ; grep "\:\/\/$a" 2.txt > 3.txt ; rm 2.txt ; rm 1.txt ; cat 3.txt >> /root/script/3_httprobe/httprobe.txt ; rm 3.txt ; done
+for a in `cat $var`; do > 1.txt ; echo "$a" > 1.txt ; a=`cat 1.txt` ; cat 1.txt | waybackurls > 2.txt ; grep = 2.txt > 3.txt ; sed -e '/%/d' 3.txt | sed -e '/(/d' | sed -e '/)/d' | sed -e '/\/\:\/\//d' | sed -e '/\/\&/d' > 2.txt ; grep "\:\/\/$a" 2.txt > 3.txt ; rm 2.txt ; rm 1.txt ; grep -oP "http.*=" 3.txt > q.txt ; sort -u q.txt -o w.txt ; for i in `cat w.txt`; do e=`grep "$i" q.txt|wc -l` ; if [ $e -gt 5 ]; then grep "$i" 3.txt > r.txt ; sed -e "/$i/d" 3.txt > 33.txt mv 33.txt 3.txt ; head -1 r.txt >> 3.txt ; fi; rm q.txt w.txt r.txt ;done;  cat 3.txt >> /root/script/3_httprobe/httprobe.txt ; rm 3.txt ; done
 
 
 else
@@ -71,7 +71,7 @@ done
 fi
 
 #wayback
-for a in `cat $var`; do > 1.txt ; echo "$a" > 1.txt ; a=`cat 1.txt` ; cat 1.txt | waybackurls > 2.txt ; grep = 2.txt > 3.txt ; sed -e '/%/d' 3.txt | sed -e '/(/d' | sed -e '/)/d' | sed -e '/\/\:\/\//d' | sed -e '/\/\&/d' > 2.txt ; grep "\:\/\/$a" 2.txt > 3.txt ; rm 2.txt ; rm 1.txt ; cat 3.txt >> /root/script/3_httprobe/httprobe.txt ; rm 3.txt ; done
+for a in `cat $var`; do > 1.txt ; echo "$a" > 1.txt ; a=`cat 1.txt` ; cat 1.txt | waybackurls > 2.txt ; grep = 2.txt > 3.txt ; sed -e '/%/d' 3.txt | sed -e '/(/d' | sed -e '/)/d' | sed -e '/\/\:\/\//d' | sed -e '/\/\&/d' > 2.txt ; grep "\:\/\/$a" 2.txt > 3.txt ; rm 2.txt ; rm 1.txt ; grep -oP "http.*=" 3.txt > q.txt ; sort -u q.txt -o w.txt ; for i in `cat w.txt`; do e=`grep "$i" q.txt|wc -l` ; if [ $e -gt 5 ]; then grep "$i" 3.txt > r.txt ; sed -e "/$i/d" 3.txt > 33.txt mv 33.txt 3.txt ; head -1 r.txt >> 3.txt ; fi; rm q.txt w.txt r.txt ;done;  cat 3.txt >> /root/script/3_httprobe/httprobe.txt ; rm 3.txt ; done
 
 
 sort -u /root/script/3_httprobe/httprobe.txt -o /root/script/3_httprobe/httprobe.txt
