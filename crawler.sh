@@ -30,4 +30,4 @@ for a in `cat $var`; do > 1.txt ; echo "$a" > 1.txt ; a=`cat 1.txt` ; cat 1.txt 
 
 
 sort -u /root/script/3_httprobe/httprobe.txt -o /root/script/3_httprobe/httprobe.txt
-ls ; wc -l $input ; du -h
+ls ; wc -l $input
