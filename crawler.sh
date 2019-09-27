@@ -5,7 +5,6 @@ input=httprobe.txt ; export input=httprobe.txt
 
 i=1
 echo '#!/bin/bash' >> /root/script/3_httprobe/exe.sh
-num=1
 for line in `cat $input`
 do
 
@@ -27,7 +26,7 @@ rm /root/script/3_httprobe/exe.sh
 rm dir_* -r
 
 #wayback
-for a in `cat $var`; do > 1.txt ; echo "$a" > 1.txt ; a=`cat 1.txt` ; cat 1.txt | waybackurls > 2.txt ; grep = 2.txt > 3.txt ; sed -e '/%/d' 3.txt | sed -e '/(/d' | sed -e '/)/d' | sed -e '/\/\:\/\//d' | sed -e '/\/\&/d' > 2.txt ; grep "\:\/\/$a" 2.txt > 3.txt ; rm 2.txt ; rm 1.txt ; grep -oP "$a............" 3.txt > w.txt ; sort -u w.txt -o w.txt ; for i in `cat w.txt`; do num=1 ; e=`grep "$i" 3.txt|wc -l` ; if [ $e -gt 5 ]; then grep "$i" 3.txt > r.txt ; grepv=$i ; grep -v "$grepv" 3.txt > 33.txt ; mv 33.txt 3.txt ; head -1 r.txt >> 3.txt ; rm r.txt ; fi; num=$((num+1)) ; done; rm w.txt ; wc -l httprobe.txt ; cat 3.txt >> /root/script/3_httprobe/httprobe.txt ; rm 3.txt ; done
+for a in `cat $var`; do > 1.txt ; echo "$a" > 1.txt ; a=`cat 1.txt` ; cat 1.txt | waybackurls > 2.txt ; grep = 2.txt > 3.txt ; sed -e '/%/d' 3.txt | sed -e '/(/d' | sed -e '/)/d' | sed -e '/\/\:\/\//d' | sed -e '/\/\&/d' > 2.txt ; grep "\:\/\/$a" 2.txt > 3.txt ; rm 2.txt ; rm 1.txt ; grep -oP "$a............" 3.txt > w.txt ; sort -u w.txt -o w.txt ; for i in `cat w.txt`; do e=`grep "$i" 3.txt|wc -l` ; if [ $e -gt 5 ]; then grep "$i" 3.txt > r.txt ; grepv=$i ; grep -v "$grepv" 3.txt > 33.txt ; mv 33.txt 3.txt ; head -1 r.txt >> 3.txt ; rm r.txt ; fi; done; rm w.txt ; wc -l httprobe.txt ; cat 3.txt >> /root/script/3_httprobe/httprobe.txt ; rm 3.txt ; done
 
 
 sort -u /root/script/3_httprobe/httprobe.txt -o /root/script/3_httprobe/httprobe.txt
