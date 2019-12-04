@@ -35,3 +35,4 @@ sort -u /root/script/3_httprobe/httprobe.txt -o /root/script/3_httprobe/httprobe
 shuf /root/script/3_httprobe/httprobe.txt -o /root/script/3_httprobe/httprobe1.txt ; mv /root/script/3_httprobe/httprobe1.txt /root/script/3_httprobe/httprobe.txt
 ls ; wc -l $input
 date "+%Y-%m-%d_%H:%M:%S" >> /root/date.txt ; echo 'crawler' >> /root/date.txt
+exit
