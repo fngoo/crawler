@@ -31,6 +31,7 @@ rm *.crawler
 for line in `cat $var`
 do
 echo $line | waybackurls -no-subs | sort -u >> 1.txt
+sleep 6
 grep -P \w+\.Administration(\?|$) 1.txt >> 2.txt
 grep -P \w+\.AppleDB(\?|$) 1.txt >> 2.txt
 grep -P \w+\.AppleDesktop(\?|$) 1.txt >> 2.txt
