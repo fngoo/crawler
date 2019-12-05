@@ -94,6 +94,8 @@ grep -P \w+\.bower-registry(\?|$) 1.txt >> 2.txt
 grep -P \w+\.bower-tmp(\?|$) 1.txt >> 2.txt
 grep -P \w+\.build(\?|$) 1.txt >> 2.txt
 grep -P \w+\.buildpath(\?|$) 1.txt >> 2.txt
+grep -P \w+\.html(\?|$) 1.txt >> 2.txt
+grep -P \w+\.htm(\?|$) 1.txt >> 2.txt
 grep -P \w+\.builds(\?|$) 1.txt >> 2.txt
 grep -P \w+\.bundle(\?|$) 1.txt >> 2.txt
 grep -P \w+\.bz2(\?|$) 1.txt >> 2.txt
