@@ -46,6 +46,7 @@ grep -P \w+\.FBCIndex(\?|$) 1.txt >> 2.txt
 grep -P \w+\.FormServlet(\?|$) 1.txt >> 2.txt
 grep -P \w+\.InvokerServlet(\?|$) 1.txt >> 2.txt
 grep -P \w+\.LOCAL(\?|$) 1.txt >> 2.txt
+grep -P \w+\.json(\?|$) 1.txt >> 2.txt
 grep -P \w+\.LOG(\?|$) 1.txt >> 2.txt
 grep -P \w+\.LSOverride(\?|$) 1.txt >> 2.txt
 grep -P \w+\.MF(\?|$) 1.txt >> 2.txt
