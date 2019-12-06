@@ -491,7 +491,7 @@ grep -P \w+\.zip(\?|$) 1.txt >> 2.txt
 grep -P \w+\.zsh_history(\?|$) 1.txt >> 2.txt
 rm 1.txt
 vl -t 15 -s 50 2.txt | grep -v "\[50" | grep -oP "http.*" >> /root/script/3_httprobe/httprobe.txt
-vl=`ps -a | grep vl | awk '{print $1}'`
+vl=`ps -A | grep vl | awk '{print $1}'`
 for line in $vl
 do
 kill -9 $line
