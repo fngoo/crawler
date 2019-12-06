@@ -490,7 +490,7 @@ grep -P \w+\.zfs(\?|$) 1.txt >> 2.txt
 grep -P \w+\.zip(\?|$) 1.txt >> 2.txt
 grep -P \w+\.zsh_history(\?|$) 1.txt >> 2.txt
 rm 1.txt
-vl -s 50 2.txt | grep -v "\[50" | grep -oP "http.*" >> /root/script/3_httprobe/httprobe.txt
+vl -t 15 -s 50 2.txt | grep -v "\[50" | grep -oP "http.*" >> /root/script/3_httprobe/httprobe.txt
 rm 2.txt
 done
 
